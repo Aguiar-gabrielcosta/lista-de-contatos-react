@@ -31,6 +31,8 @@ export const HeaderContainer = styled.header`
 
 export const AsideContainer = styled.aside`
   grid-column: 1/2;
+  background-color: ${(props) => props.theme.corSecundaria};
+  border-right: 1px solid ${(props) => props.theme.corTerciaria};
   padding: 8px 16px;
 `
 

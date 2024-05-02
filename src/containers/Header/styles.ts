@@ -30,8 +30,10 @@ export const LinkNavegacao = styled(Link)`
   background-color: ${(props) => props.theme.corPrincipal};
   padding: 8px;
   border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
 
   &:hover {
-    background-color: ${(props) => props.theme.corSecundaria};
+    background-color: ${(props) => props.theme.corButtonHover};
   }
 `

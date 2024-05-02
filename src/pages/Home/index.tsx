@@ -1,3 +1,4 @@
+import BarraLateral from '../../containers/BarraLateral'
 import Header from '../../containers/Header'
 import { AsideContainer, HeaderContainer, MainContainer } from '../../styles'
 
@@ -7,7 +8,9 @@ const Home = () => {
       <HeaderContainer>
         <Header />
       </HeaderContainer>
-      <AsideContainer>Barra lateral</AsideContainer>
+      <AsideContainer>
+        <BarraLateral />
+      </AsideContainer>
       <MainContainer>Lista de contatos</MainContainer>
     </>
   )
