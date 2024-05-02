@@ -2,10 +2,10 @@ import { Provider } from 'react-redux'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
 import { temaDark } from './theme/theme'
-import EstiloGlobal from './styles'
 import store from './store'
 import Home from './pages/Home'
 import Cadastro from './pages/Cadastro'
+import EstiloGlobal, { LayoutContainer } from './styles'
 
 const rotas = createBrowserRouter([
   {
@@ -23,7 +23,9 @@ function App() {
     <Provider store={store}>
       <ThemeProvider theme={temaDark}>
         <EstiloGlobal />
-        <RouterProvider router={rotas} />
+        <LayoutContainer>
+          <RouterProvider router={rotas} />
+        </LayoutContainer>
       </ThemeProvider>
     </Provider>
   )
