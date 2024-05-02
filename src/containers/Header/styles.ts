@@ -27,13 +27,13 @@ export const BarraDePesquisa = styled.input`
 export const LinkNavegacao = styled(Link)`
   text-decoration: none;
   color: ${(props) => props.theme.corTexto};
-  background-color: ${(props) => props.theme.corPrincipal};
+  background-color: ${(props) => props.theme.corBotaoPositivo};
   padding: 8px;
   border-radius: 8px;
   font-size: 1rem;
   font-weight: bold;
 
   &:hover {
-    background-color: ${(props) => props.theme.corButtonHover};
+    background-color: ${(props) => props.theme.corBotaoPositivoHover};
   }
 `

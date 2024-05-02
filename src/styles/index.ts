@@ -39,4 +39,37 @@ export const AsideContainer = styled.aside`
 export const MainContainer = styled.main`
   grid-column: 2/3;
   padding: 8px 16px;
+  overflow-y: scroll;
+`
+
+export const Botao = styled.button`
+  color: ${(props) => props.theme.corTexto};
+  background-color: ${(props) => props.theme.corBotaoNeutro};
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 16px 8px 0 0;
+  cursor: pointer;
+
+  &:hover {
+    background-color: ${(props) => props.theme.corBotaoNeutroHover};
+  }
+`
+
+export const BotaoPositivo = styled(Botao)`
+  background-color: ${(props) => props.theme.corBotaoPositivo};
+
+  &:hover {
+    background-color: ${(props) => props.theme.corBotaoPositivoHover};
+  }
+`
+
+export const BotaoNegativo = styled(Botao)`
+  background-color: ${(props) => props.theme.corBotaoNegativo};
+
+  &:hover {
+    background-color: ${(props) => props.theme.corBotaoNegativoHover};
+  }
 `
