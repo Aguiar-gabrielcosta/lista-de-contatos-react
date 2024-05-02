@@ -3,13 +3,15 @@ export type Theme = {
   corSecundaria: string
   corTerciaria: string
   corDeFundo: string
+  corTitulo: string
   corTexto: string
 }
 
 export const temaDark: Theme = {
-  corPrincipal: '#273c75',
-  corSecundaria: '#192a56',
-  corTerciaria: '#353b48',
+  corPrincipal: '#192a56',
+  corSecundaria: '#718093',
+  corTerciaria: '#010409',
   corDeFundo: '#2f3640',
+  corTitulo: '#fff',
   corTexto: '#f5f6fa'
 }
