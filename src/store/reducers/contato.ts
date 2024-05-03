@@ -59,14 +59,15 @@ const contatosSlice = createSlice({
         state.itens.push(action.payload)
       }
     },
-    editar: (state, action: PayloadAction<ContatoType>) => {
+    editar: (state, action: PayloadAction<Omit<ContatoType, 'categoria'>>) => {
       const indexContatoEditado = state.itens.findIndex(
         (contato) =>
           contato.nome.toLowerCase() === action.payload.nome.toLowerCase()
       )
 
       if (indexContatoEditado >= 0) {
-        state.itens[indexContatoEditado] = action.payload
+        state.itens[indexContatoEditado].email = action.payload.email
+        state.itens[indexContatoEditado].telefone = action.payload.telefone
       }
     }
   }

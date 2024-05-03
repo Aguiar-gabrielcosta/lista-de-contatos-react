@@ -1,15 +1,97 @@
+import { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux'
 import Botao from '../Botao'
 import * as S from './styles'
 import * as enums from '../../utils/enums/botao'
+import { editar, remover } from '../../store/reducers/contato'
 
-const ContatoCard = () => {
+type Props = {
+  nome: string
+  email: string
+  telefone: string
+}
+
+const ContatoCard = ({
+  nome,
+  email: emailOriginal,
+  telefone: telefoneOriginal
+}: Props) => {
+  const dispatch = useDispatch()
+  const [editando, setEditando] = useState(false)
+  const [email, setEmail] = useState('')
+  const [telefone, setTelefone] = useState('')
+
+  useEffect(() => {
+    if (emailOriginal.length >= 0) {
+      setEmail(emailOriginal)
+    }
+  }, [emailOriginal])
+
+  useEffect(() => {
+    if (telefoneOriginal.length >= 0) {
+      setTelefone(telefoneOriginal)
+    }
+  }, [telefoneOriginal])
+
   return (
     <S.ContatoCard>
-      <S.ContatoTitulo>nome completo</S.ContatoTitulo>
-      <S.ContatoEmail>email@email.com</S.ContatoEmail>
-      <S.ContatoTelefone>(DD)00000-0000</S.ContatoTelefone>
-      <Botao tipo={enums.TipoBotao.NEUTRO}>Editar</Botao>
-      <Botao tipo={enums.TipoBotao.NEGATIVO}>Remover</Botao>
+      <S.ContatoNome>{nome}</S.ContatoNome>
+      <S.ContatoDados>
+        <S.ContatoLabel htmlFor="email">E-mail:</S.ContatoLabel>
+        <S.ContatoEmail
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          id="email"
+          disabled={!editando}
+        />
+      </S.ContatoDados>
+      <S.ContatoDados>
+        <S.ContatoLabel htmlFor="tel">Telefone:</S.ContatoLabel>
+        <S.ContatoTelefone
+          value={telefone}
+          onChange={(e) => setTelefone(e.target.value)}
+          id="tel"
+          disabled={!editando}
+        />
+      </S.ContatoDados>
+      {editando ? (
+        <>
+          <Botao
+            tipo={enums.TipoBotao.POSITIVO}
+            onClick={() => {
+              dispatch(editar({ nome, email, telefone }))
+              setEditando(false)
+            }}
+          >
+            Salvar
+          </Botao>
+          <Botao
+            tipo={enums.TipoBotao.NEGATIVO}
+            onClick={() => {
+              setEditando(false)
+              setEmail(emailOriginal)
+              setTelefone(telefoneOriginal)
+            }}
+          >
+            Cancelar
+          </Botao>
+        </>
+      ) : (
+        <>
+          <Botao
+            tipo={enums.TipoBotao.NEUTRO}
+            onClick={() => setEditando(true)}
+          >
+            Editar
+          </Botao>
+          <Botao
+            tipo={enums.TipoBotao.NEGATIVO}
+            onClick={() => dispatch(remover(nome))}
+          >
+            Remover
+          </Botao>
+        </>
+      )}
     </S.ContatoCard>
   )
 }

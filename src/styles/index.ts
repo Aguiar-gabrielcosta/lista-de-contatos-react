@@ -6,7 +6,8 @@ const EstiloGlobal = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     font-family: Roboto, sans-serif;
-    color: ${(props) => props.theme.corTexto}
+    color: ${(props) => props.theme.corTexto};
+    list-style: none;
   }
 
   body {
