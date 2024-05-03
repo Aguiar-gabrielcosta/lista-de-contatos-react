@@ -25,3 +25,11 @@ export const LinkNavegacao = styled(Link)`
     background-color: ${(props) => props.theme.corBotaoPositivoHover};
   }
 `
+
+export const LinkNavegacaoRetorno = styled(LinkNavegacao)`
+  background-color: ${(props) => props.theme.corBotaoNeutro};
+
+  &:hover {
+    background-color: ${(props) => props.theme.corBotaoNeutroHover};
+  }
+`

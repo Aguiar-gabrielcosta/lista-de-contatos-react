@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <>
       <HeaderContainer>
-        <Header />
+        <Header paginaConsulta={true} />
       </HeaderContainer>
       <AsideContainer>
         <BarraLateral />

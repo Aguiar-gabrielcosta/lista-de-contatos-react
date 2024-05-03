@@ -1,11 +1,17 @@
+import Formulario from '../../components/Formulario'
+import Header from '../../containers/Header'
 import { AsideContainer, HeaderContainer, MainContainer } from '../../styles'
 
 const Cadastro = () => {
   return (
     <>
-      <HeaderContainer></HeaderContainer>
+      <HeaderContainer>
+        <Header paginaConsulta={false} />
+      </HeaderContainer>
       <AsideContainer></AsideContainer>
-      <MainContainer></MainContainer>
+      <MainContainer>
+        <Formulario />
+      </MainContainer>
     </>
   )
 }
