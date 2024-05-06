@@ -1,4 +1,5 @@
 import * as enums from '../utils/enums/filtro'
+import formataTelefone from '../utils/functions/mascaraTelefone'
 
 export type ContatoType = {
   nome: string
@@ -21,7 +22,7 @@ class Contato {
   ) {
     this.nome = nome
     this.email = email
-    this.telefone = telefone
+    this.telefone = formataTelefone(telefone)
     this.categoria = categoria
   }
 

@@ -4,6 +4,7 @@ import Botao from '../Botao'
 import * as S from './styles'
 import * as enums from '../../utils/enums/botao'
 import { editar, remover } from '../../store/reducers/contato'
+import formataTelefone from '../../utils/functions/mascaraTelefone'
 
 type Props = {
   nome: string
@@ -57,10 +58,11 @@ const ContatoCard = ({
         </S.ContatoLabel>
         <S.ContatoTelefone
           value={telefone}
-          onChange={(e) => setTelefone(e.target.value)}
+          onChange={(e) => setTelefone(formataTelefone(e.target.value))}
           id="tel"
           disabled={!editando}
           $editando={editando}
+          maxLength={11}
         />
       </S.ContatoDados>
       {editando ? (

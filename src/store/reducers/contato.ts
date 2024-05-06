@@ -10,23 +10,21 @@ const initialState: ContatosState = {
   itens: [
     new Contato(
       'gabriel aguiar da costa',
-      'Aguiar.gc@hotmail.com',
+      'aguiar.gc@hotmail.com',
       '11964204765',
       [enums.Categoria.FAVORITO, enums.Categoria.FAMILIA]
     ).getContato(),
+    new Contato('Fernando da Silva Costa', 'email@exemplo.com', '21924234242', [
+      enums.Categoria.FAVORITO,
+      enums.Categoria.TRABALHO
+    ]).getContato(),
     new Contato(
-      'camila aguiar da costa',
-      'Aguiar.gc@hotmail.com',
-      '11964204765',
-      [enums.Categoria.FAVORITO, enums.Categoria.FAMILIA]
+      'Maria Clara Ferdinando Augustus',
+      'email@exemplo.com',
+      '85923452134',
+      [enums.Categoria.FAVORITO, enums.Categoria.TRABALHO]
     ).getContato(),
-    new Contato(
-      'ana paula salvador de aguiar da costa',
-      'Aguiar.gc@hotmail.com',
-      '11964204765',
-      [enums.Categoria.FAVORITO, enums.Categoria.FAMILIA]
-    ).getContato(),
-    new Contato('João da Silva Costa', 'Aguiar.gc@hotmail.com', '11964204765', [
+    new Contato('João da Silva Costa', 'email@exemplo.com', '11964456324', [
       enums.Categoria.TRABALHO
     ]).getContato()
   ]
