@@ -1,5 +1,9 @@
 import styled from 'styled-components'
 
+type Props = {
+  editando: boolean
+}
+
 export const ContatoCard = styled.div`
   padding: 16px;
   border: 1px solid ${(props) => props.theme.corTerciaria};
@@ -21,18 +25,20 @@ export const ContatoDados = styled.div`
   max-width: 400px;
 `
 
-export const ContatoLabel = styled.label`
+export const ContatoLabel = styled.label<Props>`
   font-size: 1rem;
-  font-style: italic;
+  font-style: ${(props) => (props.editando ? 'italic' : 'normal')};
   font-weight: bold;
   margin-right: 8px;
 `
 
-export const ContatoEmail = styled.input`
+export const ContatoEmail = styled.input<Props>`
   font-size: 1rem;
   background-color: transparent;
   border: none;
   width: 70%;
+  border-bottom: 1px solid
+    ${(props) => (props.editando ? props.theme.corTexto : 'none')};
 `
 
 export const ContatoTelefone = styled(ContatoEmail)`

@@ -35,23 +35,32 @@ const ContatoCard = ({
 
   return (
     <S.ContatoCard>
-      <S.ContatoNome>{nome}</S.ContatoNome>
+      <S.ContatoNome>
+        {editando && <em>Editando: </em>}
+        {nome}
+      </S.ContatoNome>
       <S.ContatoDados>
-        <S.ContatoLabel htmlFor="email">E-mail:</S.ContatoLabel>
+        <S.ContatoLabel editando={editando} htmlFor="email">
+          E-mail:
+        </S.ContatoLabel>
         <S.ContatoEmail
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           id="email"
           disabled={!editando}
+          editando={editando}
         />
       </S.ContatoDados>
       <S.ContatoDados>
-        <S.ContatoLabel htmlFor="tel">Telefone:</S.ContatoLabel>
+        <S.ContatoLabel editando={editando} htmlFor="tel">
+          Telefone:
+        </S.ContatoLabel>
         <S.ContatoTelefone
           value={telefone}
           onChange={(e) => setTelefone(e.target.value)}
           id="tel"
           disabled={!editando}
+          editando={editando}
         />
       </S.ContatoDados>
       {editando ? (
