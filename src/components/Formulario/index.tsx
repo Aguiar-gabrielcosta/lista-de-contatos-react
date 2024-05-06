@@ -45,7 +45,6 @@ const Formulario = () => {
 
   const cadastrarNovoContato = (event: FormEvent) => {
     event.preventDefault()
-    console.log('Formulário submetido')
 
     dispatch(
       cadastrar({
@@ -61,7 +60,7 @@ const Formulario = () => {
 
   return (
     <S.Form onSubmit={cadastrarNovoContato}>
-      <S.Titulo>Novo contato {formataTelefone('11964204765')}</S.Titulo>
+      <S.Titulo>Novo contato</S.Titulo>
       <S.Campo>
         <label htmlFor="nome">Nome completo: </label>
         <input

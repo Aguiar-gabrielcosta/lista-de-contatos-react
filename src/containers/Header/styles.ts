@@ -6,6 +6,11 @@ export const Header = styled.div`
   justify-content: space-between;
   align-items: center;
   color: ${(props) => props.theme.corTitulo};
+
+  @media (max-width: 760px) {
+    flex-direction: column;
+    row-gap: 8px;
+  }
 `
 
 export const Logo = styled.h1`

@@ -26,6 +26,11 @@ export const Campo = styled.div`
     font-size: 1rem;
     width: 100%;
     padding: 8px;
+
+    &::placeholder {
+      color: ${(props) => props.theme.corTexto};
+      opacity: 0.8;
+    }
   }
 `
 

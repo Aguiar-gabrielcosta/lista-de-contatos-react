@@ -27,3 +27,18 @@ export const temaDark: Theme = {
   corBotaoNeutro: '#40739e',
   corBotaoNeutroHover: '#487eb0'
 }
+
+export const temaLight: Theme = {
+  corPrincipal: '#0097e6',
+  corSecundaria: '#dcdde1',
+  corTerciaria: '#0097e6',
+  corDeFundo: '#f5f6fa',
+  corTitulo: '#fff',
+  corTexto: '#fff',
+  corBotaoPositivo: '#44bd32',
+  corBotaoPositivoHover: '#4cd137',
+  corBotaoNegativo: '#c23616',
+  corBotaoNegativoHover: '#e84118',
+  corBotaoNeutro: '#273c75',
+  corBotaoNeutroHover: '#192a56'
+}

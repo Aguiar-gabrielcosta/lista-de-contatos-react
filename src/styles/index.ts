@@ -22,6 +22,10 @@ export const LayoutContainer = styled.div`
   grid-template-rows: auto 1fr;
   grid-template-columns: 250px 1fr;
   height: 100vh;
+
+  @media (max-width: 760px) {
+    grid-template-columns: 1fr;
+  }
 `
 
 export const HeaderContainer = styled.header`
@@ -35,12 +39,22 @@ export const AsideContainer = styled.aside`
   background-color: ${(props) => props.theme.corSecundaria};
   border-right: 1px solid ${(props) => props.theme.corTerciaria};
   padding: 8px 16px;
+
+  @media (max-width: 760px) {
+    grid-column: 1/-1;
+    border-right: none;
+    border-bottom: 1px solid ${(props) => props.theme.corTerciaria};
+  }
 `
 
 export const MainContainer = styled.main`
   grid-column: 2/3;
   padding: 8px 16px;
   overflow-y: scroll;
+
+  @media (max-width: 760px) {
+    grid-column: 1/-1;
+  }
 `
 
 export const Botao = styled.button`
