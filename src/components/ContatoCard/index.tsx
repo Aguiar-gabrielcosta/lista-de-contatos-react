@@ -4,7 +4,9 @@ import Botao from '../Botao'
 import * as S from './styles'
 import * as enums from '../../utils/enums/botao'
 import { editar, remover } from '../../store/reducers/contato'
-import formataTelefone from '../../utils/functions/mascaraTelefone'
+import formataTelefone, {
+  numerosTelefone
+} from '../../utils/functions/mascaraTelefone'
 
 type Props = {
   nome: string
@@ -30,7 +32,7 @@ const ContatoCard = ({
 
   useEffect(() => {
     if (telefoneOriginal.length >= 0) {
-      setTelefone(telefoneOriginal)
+      setTelefone(formataTelefone(telefoneOriginal))
     }
   }, [telefoneOriginal])
 
@@ -71,6 +73,7 @@ const ContatoCard = ({
             tipo={enums.TipoBotao.POSITIVO}
             onClick={() => {
               dispatch(editar({ nome, email, telefone }))
+              setTelefone(formataTelefone(telefone))
               setEditando(false)
             }}
           >
@@ -81,7 +84,7 @@ const ContatoCard = ({
             onClick={() => {
               setEditando(false)
               setEmail(emailOriginal)
-              setTelefone(telefoneOriginal)
+              setTelefone(formataTelefone(telefoneOriginal))
             }}
           >
             Cancelar
@@ -91,7 +94,10 @@ const ContatoCard = ({
         <>
           <Botao
             tipo={enums.TipoBotao.NEUTRO}
-            onClick={() => setEditando(true)}
+            onClick={() => {
+              setEditando(true)
+              setTelefone(numerosTelefone(telefone))
+            }}
           >
             Editar
           </Botao>
