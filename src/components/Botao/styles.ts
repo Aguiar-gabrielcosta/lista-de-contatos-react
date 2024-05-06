@@ -1,11 +1,10 @@
 import styled from 'styled-components'
-import { Props } from './index'
 import * as enums from '../../utils/enums/botao'
 
-export const Botao = styled.button<Props>`
+export const Botao = styled.button<{ $tipo: enums.TipoBotao }>`
   color: ${(props) => props.theme.corTexto};
   background-color: ${(props) => {
-    switch (props.tipo) {
+    switch (props.$tipo) {
       case enums.TipoBotao.NEUTRO:
         return props.theme.corBotaoNeutro
       case enums.TipoBotao.POSITIVO:
@@ -24,7 +23,7 @@ export const Botao = styled.button<Props>`
 
   &:hover {
     background-color: ${(props) => {
-      switch (props.tipo) {
+      switch (props.$tipo) {
         case enums.TipoBotao.NEUTRO:
           return props.theme.corBotaoNeutroHover
         case enums.TipoBotao.POSITIVO:

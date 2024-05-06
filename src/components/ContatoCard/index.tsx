@@ -40,7 +40,7 @@ const ContatoCard = ({
         {nome}
       </S.ContatoNome>
       <S.ContatoDados>
-        <S.ContatoLabel editando={editando} htmlFor="email">
+        <S.ContatoLabel $editando={editando} htmlFor="email">
           E-mail:
         </S.ContatoLabel>
         <S.ContatoEmail
@@ -48,11 +48,11 @@ const ContatoCard = ({
           onChange={(e) => setEmail(e.target.value)}
           id="email"
           disabled={!editando}
-          editando={editando}
+          $editando={editando}
         />
       </S.ContatoDados>
       <S.ContatoDados>
-        <S.ContatoLabel editando={editando} htmlFor="tel">
+        <S.ContatoLabel $editando={editando} htmlFor="tel">
           Telefone:
         </S.ContatoLabel>
         <S.ContatoTelefone
@@ -60,7 +60,7 @@ const ContatoCard = ({
           onChange={(e) => setTelefone(e.target.value)}
           id="tel"
           disabled={!editando}
-          editando={editando}
+          $editando={editando}
         />
       </S.ContatoDados>
       {editando ? (

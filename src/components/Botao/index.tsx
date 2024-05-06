@@ -10,7 +10,7 @@ export type Props = {
 const Botao = ({ tipo, children, onClick }: Props) => {
   return (
     <>
-      <S.Botao tipo={tipo} onClick={onClick}>
+      <S.Botao $tipo={tipo} onClick={onClick}>
         {children}
       </S.Botao>
     </>
